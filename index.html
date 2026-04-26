@@ -1,1 +1,816 @@
-<!-- Original content of index.html.html should go here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Children's Place Learning Center – Trusted daycare and preschool in Phoenix, Arizona. Safe, nurturing childcare for ages 1–13. Now under new management with improved facilities. Call today to book a tour!"/>
+  <title>Children's Place Learning Center | Daycare & Preschool in Phoenix, AZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sun:     #F5A623;
+      --sun-lt:  #FFF3DC;
+      --sky:     #4AABDB;
+      --sky-lt:  #EAF7FF;
+      --leaf:    #5BAD72;
+      --leaf-lt: #EDFAF1;
+      --coral:   #F2705A;
+      --warm:    #FDF8F2;
+      --ink:     #1E2B22;
+      --mid:     #4A5C52;
+      --light:   #8FA99A;
+      --white:   #FFFFFF;
+      --radius:  18px;
+      --shadow:  0 8px 40px rgba(30,43,34,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 999;
+      background: rgba(253,248,242,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1.5px solid #e8e0d4;
+      padding: 0 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo span { font-size: 1.6rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--mid); font-weight: 500; font-size: .95rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-cta {
+      background: var(--coral); color: white;
+      padding: .5rem 1.3rem; border-radius: 50px;
+      font-weight: 600; text-decoration: none; font-size: .95rem;
+      transition: transform .15s, box-shadow .15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(242,112,90,.35); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 92vh;
+      display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+      gap: 4rem; padding: 5rem 6vw 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content:'';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 80% 50%, rgba(74,171,219,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(245,166,35,.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--sun-lt); border: 1.5px solid var(--sun);
+      color: #9a6800; padding: .35rem 1rem; border-radius: 50px;
+      font-size: .85rem; font-weight: 600; margin-bottom: 1.4rem;
+      animation: fadeUp .6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+      font-weight: 700; line-height: 1.18;
+      color: var(--ink);
+      margin-bottom: 1.2rem;
+      animation: fadeUp .6s .1s ease both;
+    }
+    .hero h1 em { font-style: italic; color: var(--coral); }
+    .hero p {
+      font-size: 1.1rem; color: var(--mid); max-width: 520px;
+      margin-bottom: 2rem;
+      animation: fadeUp .6s .2s ease both;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp .6s .3s ease both; }
+    .btn-primary {
+      background: var(--coral); color: white;
+      padding: .85rem 2rem; border-radius: 50px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: transform .15s, box-shadow .2s;
+      box-shadow: 0 6px 24px rgba(242,112,90,.3);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(242,112,90,.4); }
+    .btn-secondary {
+      background: white; color: var(--ink);
+      padding: .85rem 2rem; border-radius: 50px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 2px solid #e0d8ce;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: border-color .2s, transform .15s;
+    }
+    .btn-secondary:hover { border-color: var(--sky); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; gap: 2rem; margin-top: 2.5rem;
+      animation: fadeUp .6s .4s ease both;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 700; color: var(--ink); }
+    .stat-label { font-size: .8rem; color: var(--light); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* Hero image mock */
+    .hero-visual {
+      position: relative;
+      animation: fadeUp .7s .15s ease both;
+    }
+    .hero-img-wrap {
+      border-radius: 28px; overflow: hidden;
+      aspect-ratio: 4/5; max-height: 600px;
+      background: linear-gradient(135deg, #FFE8C8 0%, #C8EAF8 50%, #C8F0D4 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    .hero-img-placeholder {
+      text-align: center; color: var(--mid); padding: 2rem;
+    }
+    .hero-img-placeholder .icon { font-size: 5rem; margin-bottom: 1rem; display: block; }
+    .hero-img-placeholder p { font-size: .9rem; font-style: italic; opacity: .8; }
+    .hero-float {
+      position: absolute;
+      background: white; border-radius: 16px;
+      padding: .8rem 1.2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,.12);
+      display: flex; align-items: center; gap: .7rem;
+      font-size: .85rem; font-weight: 600;
+    }
+    .hero-float.one { bottom: -18px; left: -24px; }
+    .hero-float.two { top: 28px; right: -20px; }
+    .float-icon { font-size: 1.5rem; }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 6rem 6vw; }
+    .section-tag {
+      display: inline-block;
+      font-size: .8rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--leaf); background: var(--leaf-lt);
+      padding: .3rem .9rem; border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .section-tag.sky { color: #1d7fa8; background: var(--sky-lt); }
+    .section-tag.sun { color: #9a6800; background: var(--sun-lt); }
+    .section-tag.coral { color: #b83d28; background: #fdeae7; }
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 700; line-height: 1.2;
+      color: var(--ink); margin-bottom: 1rem;
+    }
+    .section-intro { font-size: 1.05rem; color: var(--mid); max-width: 580px; }
+    .text-center { text-align: center; }
+    .text-center .section-intro { margin: 0 auto; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+    /* ─── TRUST STRIP ─── */
+    .trust-strip {
+      background: var(--ink); padding: 2rem 6vw;
+      display: flex; align-items: center; justify-content: center;
+      gap: 3rem; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: .7rem; color: #ccd8d0; font-size: .9rem; font-weight: 500; }
+    .trust-item .ti { font-size: 1.4rem; }
+
+    /* ─── TRUST SECTION ─── */
+    .trust-section { background: white; }
+    .trust-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3.5rem; }
+    .trust-card {
+      background: var(--warm);
+      border-radius: var(--radius); padding: 2rem;
+      border: 1.5px solid #ede8e0;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .trust-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .trust-card .tc-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+    .trust-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: .6rem; }
+    .trust-card p { color: var(--mid); font-size: .95rem; }
+
+    /* ─── SERVICES ─── */
+    .services { background: var(--sky-lt); }
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .service-card {
+      background: white; border-radius: var(--radius);
+      padding: 2.2rem; border: 1.5px solid rgba(74,171,219,.2);
+      display: flex; gap: 1.5rem; align-items: flex-start;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .svc-icon {
+      width: 58px; height: 58px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; flex-shrink: 0;
+    }
+    .svc-icon.a { background: var(--sun-lt); }
+    .svc-icon.b { background: var(--sky-lt); }
+    .svc-icon.c { background: var(--leaf-lt); }
+    .svc-icon.d { background: #fdeae7; }
+    .svc-body h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: .5rem; }
+    .svc-age { font-size: .78rem; font-weight: 700; color: var(--light); text-transform: uppercase; letter-spacing: .07em; margin-bottom: .5rem; }
+    .svc-body p { color: var(--mid); font-size: .95rem; }
+
+    /* ─── WHY CHOOSE US ─── */
+    .why { background: white; }
+    .why-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .why-visual {
+      background: linear-gradient(135deg, #FFF3DC 0%, #EAF7FF 100%);
+      border-radius: 28px; aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7rem; position: relative; overflow: hidden;
+    }
+    .why-visual::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(91,173,114,.2) 0%, transparent 60%);
+    }
+    .why-list { list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: .9rem; }
+    .why-list li {
+      display: flex; align-items: flex-start; gap: .9rem;
+      background: var(--warm); border-radius: 12px; padding: 1rem 1.2rem;
+      border: 1.5px solid #ede8e0;
+    }
+    .why-list .wl-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+    .why-list strong { display: block; font-size: .95rem; color: var(--ink); }
+    .why-list span { font-size: .88rem; color: var(--mid); }
+
+    /* ─── ABOUT ─── */
+    .about { background: var(--leaf-lt); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .new-mgmt-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--leaf); color: white;
+      padding: .4rem 1.1rem; border-radius: 50px;
+      font-size: .85rem; font-weight: 700; margin-bottom: 1.4rem;
+    }
+    .about p { color: var(--mid); margin-bottom: 1rem; }
+    .improvements { margin-top: 2rem; display: flex; flex-direction: column; gap: .7rem; }
+    .improvement { display: flex; align-items: center; gap: .8rem; font-size: .95rem; color: var(--mid); }
+    .improvement::before { content: '✓'; background: var(--leaf); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; flex-shrink: 0; }
+    .about-mission {
+      background: white; border-radius: var(--radius); padding: 2.2rem;
+      border-left: 4px solid var(--leaf);
+      box-shadow: var(--shadow);
+    }
+    .about-mission h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; margin-bottom: 1rem; }
+    .about-mission p { color: var(--mid); margin-bottom: 0; }
+    .mission-values { display: flex; flex-direction: column; gap: .6rem; margin-top: 1.5rem; }
+    .mv { display: flex; align-items: center; gap: .8rem; font-size: .9rem; }
+    .mv-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials { background: var(--ink); }
+    .testimonials h2 { color: white; }
+    .testimonials .section-tag { background: rgba(255,255,255,.1); color: #9dddba; }
+    .testimonials .section-intro { color: #8FA99A; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .testi-card {
+      background: rgba(255,255,255,.06);
+      border: 1.5px solid rgba(255,255,255,.1);
+      border-radius: var(--radius); padding: 2rem;
+      transition: background .2s;
+    }
+    .testi-card:hover { background: rgba(255,255,255,.1); }
+    .stars { color: var(--sun); font-size: 1rem; letter-spacing: 2px; margin-bottom: 1rem; }
+    .testi-card blockquote { color: #c8d8cc; font-size: .95rem; font-style: italic; line-height: 1.7; margin-bottom: 1.4rem; }
+    .testi-author { display: flex; align-items: center; gap: .8rem; }
+    .testi-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 700; flex-shrink: 0;
+    }
+    .testi-name { font-weight: 600; color: white; font-size: .9rem; }
+    .testi-meta { font-size: .8rem; color: var(--light); }
+
+    /* ─── GALLERY ─── */
+    .gallery { background: white; }
+    .gallery-note { color: var(--mid); font-size: .9rem; font-style: italic; margin-top: .5rem; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1.2rem; margin-top: 2.5rem;
+    }
+    .gallery-grid .g-item {
+      border-radius: 18px; overflow: hidden;
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: .5rem;
+      font-size: .85rem; font-weight: 600; color: var(--mid);
+      text-align: center; padding: 1rem;
+    }
+    .gallery-grid .g-item .gi-icon { font-size: 2.2rem; }
+    .g-item.g1 { background: linear-gradient(135deg, #FFE8C8, #FDD09A); }
+    .g-item.g2 { background: linear-gradient(135deg, #C8EAF8, #A0D8F0); }
+    .g-item.g3 { background: linear-gradient(135deg, #C8F0D4, #A0DDB2); }
+    .g-item.g4 { background: linear-gradient(135deg, #FDEAE7, #F8C4BB); grid-column: span 2; aspect-ratio: 8/3; }
+    .g-item.g5 { background: linear-gradient(135deg, #FFF3DC, #FFE49A); }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--coral) 0%, #e8503a 100%);
+      text-align: center; padding: 7rem 6vw;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content:''; position: absolute; top: -60px; right: -60px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(255,255,255,.08);
+    }
+    .cta-section::after {
+      content:''; position: absolute; bottom: -80px; left: -40px;
+      width: 250px; height: 250px; border-radius: 50%;
+      background: rgba(255,255,255,.06);
+    }
+    .cta-section h2 { color: white; font-size: clamp(2rem, 4vw, 3rem); }
+    .cta-section p { color: rgba(255,255,255,.85); font-size: 1.1rem; max-width: 560px; margin: 1rem auto 2.5rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+    .btn-white {
+      background: white; color: var(--coral);
+      padding: .9rem 2.2rem; border-radius: 50px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: transform .15s, box-shadow .2s;
+      box-shadow: 0 6px 28px rgba(0,0,0,.2);
+    }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 38px rgba(0,0,0,.28); }
+    .btn-outline-white {
+      background: transparent; color: white;
+      padding: .9rem 2.2rem; border-radius: 50px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 2px solid rgba(255,255,255,.6);
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: background .2s, border-color .2s;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,.15); border-color: white; }
+
+    /* ─── CONTACT ─── */
+    .contact { background: var(--warm); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+    .ci-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .ci-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: white; border: 1.5px solid #ede8e0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .ci-label { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--light); }
+    .ci-value { font-size: 1rem; color: var(--ink); font-weight: 600; }
+    .ci-sub { font-size: .85rem; color: var(--mid); }
+
+    /* Form */
+    .contact-form {
+      background: white; border-radius: var(--radius);
+      padding: 2.5rem; border: 1.5px solid #ede8e0;
+      box-shadow: var(--shadow);
+    }
+    .contact-form h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; margin-bottom: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: .85rem; font-weight: 600; color: var(--mid); }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: .75rem 1rem; border: 1.5px solid #e0d8ce;
+      border-radius: 10px; font-family: 'DM Sans', sans-serif;
+      font-size: .95rem; color: var(--ink); background: var(--warm);
+      transition: border-color .2s, box-shadow .2s; outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--sky); box-shadow: 0 0 0 3px rgba(74,171,219,.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%;
+      background: var(--coral); color: white;
+      padding: .9rem; border-radius: 50px;
+      font-weight: 700; font-size: 1rem;
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: transform .15s, box-shadow .2s;
+      box-shadow: 0 6px 22px rgba(242,112,90,.3);
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(242,112,90,.4); }
+    .form-privacy { font-size: .78rem; color: var(--light); text-align: center; margin-top: 1rem; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink); color: #8FA99A;
+      padding: 3rem 6vw; text-align: center;
+    }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1.3rem; color: white; font-weight: 700; margin-bottom: .5rem; }
+    footer p { font-size: .88rem; }
+    footer a { color: var(--sky); text-decoration: none; }
+
+    /* ─── ANIMATION ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero-visual { display: none; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero p { margin: 0 auto 2rem; }
+      .trust-grid, .testi-grid, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .services-grid, .grid-2, .why-wrap, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-strip { gap: 1.5rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .g-item.g4 { grid-column: span 1; aspect-ratio: 4/3; }
+      nav { padding: 0 4vw; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─────────────── NAV ─────────────── -->
+<nav>
+  <a href="#" class="nav-logo"><span>🌻</span> Children's Place</a>
+  <ul class="nav-links">
+    <li><a href="#services">Programs</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:+16025550199" class="nav-cta">📞 Call Now</a>
+</nav>
+
+<!-- ─────────────── HERO ─────────────── -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✨ Now Under New Management &amp; Better Than Ever</div>
+    <h1>Where Little Minds <em>Grow</em>, and Parents Feel at Peace</h1>
+    <p>Phoenix's most trusted daycare and preschool — offering safe, nurturing, and learning-rich childcare for ages 1–13. Book a tour today and see the difference for yourself.</p>
+    <div class="hero-btns">
+      <a href="tel:+16025550199" class="btn-primary">📞 Call to Enroll Now</a>
+      <a href="#contact" class="btn-secondary">🏫 Book a Free Tour</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years Serving Phoenix</div></div>
+      <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Happy Families</div></div>
+      <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Parent Reviews</div></div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <div class="hero-img-placeholder">
+        <span class="icon">🧒🎨📚</span>
+        <p><strong>Suggested Hero Image:</strong><br>Bright, airy classroom with happy children doing art or reading — warm natural lighting, colorful and welcoming.</p>
+      </div>
+    </div>
+    <div class="hero-float one">
+      <span class="float-icon">🛡️</span>
+      <div><strong style="display:block;font-size:.8rem;">Safety First</strong><span style="font-size:.75rem;color:var(--mid);">Certified Staff</span></div>
+    </div>
+    <div class="hero-float two">
+      <span class="float-icon">⭐</span>
+      <div><strong style="display:block;font-size:.8rem;">Top Rated</strong><span style="font-size:.75rem;color:var(--mid);">Phoenix Daycare</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── TRUST STRIP ─────────────── -->
+<div class="trust-strip">
+  <div class="trust-item"><span class="ti">🔒</span> Licensed & State-Certified</div>
+  <div class="trust-item"><span class="ti">👩‍🏫</span> CPR-Trained Staff</div>
+  <div class="trust-item"><span class="ti">🎓</span> Curriculum-Based Learning</div>
+  <div class="trust-item"><span class="ti">📍</span> Proudly Serving Phoenix, AZ</div>
+  <div class="trust-item"><span class="ti">🕗</span> Flexible Hours Available</div>
+</div>
+
+<!-- ─────────────── TRUST SECTION ─────────────── -->
+<section class="trust-section" id="trust">
+  <div class="text-center">
+    <div class="section-tag">Why Parents Trust Us</div>
+    <h2>A Place Where Your Child Is <br>Safe, Happy &amp; Thriving</h2>
+    <p class="section-intro">Choosing childcare is one of the most important decisions you'll make. At Children's Place Learning Center, we take that responsibility seriously — every single day.</p>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <span class="tc-icon">🌟</span>
+      <h3>New Management, New Standards</h3>
+      <p>Under new leadership, we've completely reimagined what a great daycare looks like. From upgraded classrooms to refreshed safety protocols, every corner of our center has been improved with your child's wellbeing in mind.</p>
+    </div>
+    <div class="trust-card">
+      <span class="tc-icon">🛡️</span>
+      <h3>Safety Is Non-Negotiable</h3>
+      <p>Our facility meets and exceeds all Arizona childcare safety requirements. We have secure entry systems, monitored play areas, and strict pick-up verification procedures — so you never have to wonder if your child is safe.</p>
+    </div>
+    <div class="trust-card">
+      <span class="tc-icon">👩‍🏫</span>
+      <h3>Trained, Caring Staff</h3>
+      <p>Our teachers and caregivers are background-checked, CPR-certified, and trained in early childhood development. More than that, they genuinely love what they do — and it shows in how they connect with every child.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── SERVICES ─────────────── -->
+<section class="services" id="services">
+  <div class="text-center">
+    <div class="section-tag sky">Our Programs</div>
+    <h2>Childcare &amp; Learning Programs <br>for Every Stage</h2>
+    <p class="section-intro">Whether you need full-time daycare in Phoenix or enriching after-school care, we have a program designed for your child's age, needs, and curiosity.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="svc-icon a">🍼</div>
+      <div class="svc-body">
+        <div class="svc-age">Ages 1 – 2 Years</div>
+        <h3>Infant &amp; Toddler Care</h3>
+        <p>Our youngest learners receive the warmest welcome. We focus on nurturing routines, sensory play, and one-on-one attention that helps babies and toddlers feel safe, loved, and ready to explore the world. Low caregiver-to-child ratios ensure every little one gets the attention they deserve.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon b">🎨</div>
+      <div class="svc-body">
+        <div class="svc-age">Ages 2 – 4 Years</div>
+        <h3>Toddler Program</h3>
+        <p>Curious minds need room to grow. Our toddler program blends structured play with creative exploration — art, music, storytime, and outdoor activities that build social skills, language development, and a love of learning from the very beginning.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon c">📚</div>
+      <div class="svc-body">
+        <div class="svc-age">Ages 4 – 6 Years</div>
+        <h3>Preschool Program</h3>
+        <p>Our preschool in Phoenix prepares children for kindergarten and beyond. Through a thoughtfully designed curriculum, children develop early literacy, math readiness, problem-solving skills, and the confidence to learn independently — all in a fun and encouraging environment.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon d">🏫</div>
+      <div class="svc-body">
+        <div class="svc-age">Ages 6 – 13 Years</div>
+        <h3>After-School Care</h3>
+        <p>School's out — but learning and fun don't stop. Our after-school program provides a safe, supervised environment with homework help, enrichment activities, snacks, and plenty of time to relax and play. We offer flexible scheduling to fit your family's routine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── WHY CHOOSE US ─────────────── -->
+<section class="why" id="why">
+  <div class="why-wrap">
+    <div class="why-visual">🏡</div>
+    <div>
+      <div class="section-tag">Why Choose Us</div>
+      <h2>More Than Childcare — It's a Community</h2>
+      <p style="color:var(--mid); margin-top:.8rem;">Every family that walks through our doors becomes part of the Children's Place family. Here's what sets our childcare services apart from the rest.</p>
+      <ul class="why-list">
+        <li>
+          <span class="wl-icon">🔐</span>
+          <div><strong>Secure, Safe Environment</strong><span>Keypad entry, monitored facilities, and strict safety policies keep every child protected throughout the day.</span></div>
+        </li>
+        <li>
+          <span class="wl-icon">🎓</span>
+          <div><strong>Learning-Based Curriculum</strong><span>Our programs go beyond babysitting — we use age-appropriate educational frameworks that prepare children for school and life.</span></div>
+        </li>
+        <li>
+          <span class="wl-icon">❤️</span>
+          <div><strong>Warm, Caring Staff</strong><span>Our team treats every child like their own. We believe children thrive when they feel genuinely seen, heard, and loved.</span></div>
+        </li>
+        <li>
+          <span class="wl-icon">🕐</span>
+          <div><strong>Flexible Scheduling</strong><span>Full-time, part-time, and after-school options are available — because we know every family's schedule is different.</span></div>
+        </li>
+        <li>
+          <span class="wl-icon">📢</span>
+          <div><strong>Open Communication with Parents</strong><span>We keep you informed with regular updates, progress reports, and an open-door policy you can actually trust.</span></div>
+        </li>
+        <li>
+          <span class="wl-icon">🌿</span>
+          <div><strong>Clean, Stimulating Facilities</strong><span>Freshly updated classrooms, safe play areas, and a clean, welcoming space that feels like a home away from home.</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── ABOUT ─────────────── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="new-mgmt-badge">🌱 Under New Management</div>
+      <h2>A Fresh Start for Phoenix Families</h2>
+      <p>Children's Place Learning Center has been a part of the Phoenix community for over 15 years. Recently, our center entered an exciting new chapter — with new ownership, a renewed mission, and a complete commitment to raising the bar for childcare in Phoenix.</p>
+      <p>We've listened to families, invested in our facilities, and brought in dedicated staff who share our belief that every child deserves the best possible start in life. The result? A daycare and preschool environment that parents are proud to bring their children to every morning.</p>
+
+      <div class="improvements">
+        <div class="improvement">Fully renovated classrooms and play areas</div>
+        <div class="improvement">Enhanced security systems and check-in procedures</div>
+        <div class="improvement">New, enriched curriculum developed by education specialists</div>
+        <div class="improvement">Expanded staff training and professional development</div>
+        <div class="improvement">Improved parent communication and transparency</div>
+        <div class="improvement">Upgraded outdoor play and learning spaces</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="about-mission">
+        <h3>Our Mission &amp; Values</h3>
+        <p>We believe that the early years are the most important years. Our mission is simple: to provide a safe, loving, and stimulating environment where children in Phoenix can learn, grow, and become confident, curious individuals.</p>
+        <div class="mission-values">
+          <div class="mv"><div class="mv-dot" style="background:var(--coral)"></div> <strong>Safety</strong> — Your child's wellbeing comes first, always.</div>
+          <div class="mv"><div class="mv-dot" style="background:var(--sun)"></div> <strong>Love</strong> — We care for every child as if they were our own.</div>
+          <div class="mv"><div class="mv-dot" style="background:var(--sky)"></div> <strong>Learning</strong> — We inspire curiosity and a lifelong love of discovery.</div>
+          <div class="mv"><div class="mv-dot" style="background:var(--leaf)"></div> <strong>Community</strong> — We partner with families, not just care for children.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── TESTIMONIALS ─────────────── -->
+<section class="testimonials" id="testimonials">
+  <div class="text-center">
+    <div class="section-tag">Parent Reviews</div>
+    <h2>What Phoenix Families Are Saying</h2>
+    <p class="section-intro">Don't just take our word for it — hear from the parents who trust us with what matters most.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Since the new management took over, I've noticed a huge difference. The staff is more attentive, the classroom looks amazing, and my daughter actually cries when it's time to leave — in a good way! I feel completely at ease dropping her off every morning."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:#FFE8C8">😊</div>
+        <div><div class="testi-name">Maria T.</div><div class="testi-meta">Mom of a 3-year-old · Phoenix, AZ</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"We switched to Children's Place after a bad experience elsewhere, and I can honestly say it's been night and day. The teachers know my son by name, they communicate with us daily, and I can see real progress in his learning. Best childcare in Phoenix, hands down."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:#C8EAF8">👨</div>
+        <div><div class="testi-name">James &amp; Keisha R.</div><div class="testi-meta">Parents of a 4-year-old · Phoenix, AZ</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"As a working parent, I needed somewhere flexible and trustworthy. Children's Place has been a lifesaver. The after-school program keeps my two kids safe and busy, and I love getting little updates throughout the day. The new management has really turned this place around."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:#C8F0D4">👩</div>
+        <div><div class="testi-name">Sandra M.</div><div class="testi-meta">Mom of two · Phoenix, AZ</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── GALLERY ─────────────── -->
+<section class="gallery" id="gallery">
+  <div class="text-center">
+    <div class="section-tag sun">Inside Our Center</div>
+    <h2>A Warm, Bright Space Made for Growing</h2>
+    <p class="section-intro">Our recently updated facility is designed to spark imagination, encourage learning, and feel like a second home for every child.</p>
+    <p class="gallery-note">📸 Replace placeholders below with real photos of your center, classrooms, outdoor area, and children (with permission).</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-item g1"><span class="gi-icon">🖌️</span>Art &amp; Creativity Room</div>
+    <div class="g-item g2"><span class="gi-icon">📖</span>Preschool Classroom</div>
+    <div class="g-item g3"><span class="gi-icon">🌳</span>Outdoor Play Area</div>
+    <div class="g-item g4"><span class="gi-icon">🏫</span>Our Welcoming Entrance &amp; Common Areas — A bright, cheerful space that children love coming to every morning</div>
+    <div class="g-item g5"><span class="gi-icon">🧩</span>Toddler Play Zone</div>
+  </div>
+</section>
+
+<!-- ─────────────── CTA ─────────────── -->
+<section class="cta-section">
+  <div class="section-tag coral" style="background:rgba(255,255,255,.2);color:white;">Limited Spots Available</div>
+  <h2>Give Your Child the Best Start in Phoenix</h2>
+  <p>Enrollment spots fill up fast — especially with our improved programs and newly upgraded facility. Take the first step today. Come see us, ask questions, and experience Children's Place for yourself.</p>
+  <div class="cta-btns">
+    <a href="tel:+16025550199" class="btn-white">📞 Call (602) 555-0199</a>
+    <a href="#contact" class="btn-outline-white">🗓️ Schedule a Free Tour</a>
+  </div>
+</section>
+
+<!-- ─────────────── CONTACT ─────────────── -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-tag">Get in Touch</div>
+      <h2>We'd Love to Meet Your Family</h2>
+      <p style="color:var(--mid); margin-top:.8rem; margin-bottom:2rem;">Have questions about enrollment, scheduling, or our programs? Reach out anytime — our friendly team is happy to help.</p>
+      <div class="contact-info">
+        <div class="ci-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <div class="ci-label">Phone</div>
+            <div class="ci-value">(602) 555-0199</div>
+            <div class="ci-sub">Mon–Fri, 6:30am – 6:30pm</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label">Location</div>
+            <div class="ci-value">Phoenix, Arizona</div>
+            <div class="ci-sub">Serving families across the Phoenix metro area</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value">hello@childrensplaceaz.com</div>
+            <div class="ci-sub">We respond within 1 business day</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">🕗</div>
+          <div>
+            <div class="ci-label">Hours</div>
+            <div class="ci-value">Monday – Friday: 6:30am – 6:30pm</div>
+            <div class="ci-sub">Flexible drop-off &amp; pick-up scheduling available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>📋 Request a Tour or Info</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Parent's First Name</label>
+          <input type="text" placeholder="Jane"/>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(602) 000-0000"/>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="jane@email.com"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Child's Age</label>
+          <select>
+            <option value="">Select age</option>
+            <option>1 year</option>
+            <option>2 years</option>
+            <option>3 years</option>
+            <option>4 years</option>
+            <option>5 years</option>
+            <option>6–13 years (After-School)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Program of Interest</label>
+          <select>
+            <option value="">Select program</option>
+            <option>Infant & Toddler Care</option>
+            <option>Toddler Program</option>
+            <option>Preschool Program</option>
+            <option>After-School Care</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Message (Optional)</label>
+        <textarea placeholder="Any questions or details you'd like to share…"></textarea>
+      </div>
+      <button type="button" class="form-submit">✉️ Send My Request</button>
+      <p class="form-privacy">🔒 Your information is safe with us. We never share your details.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── FOOTER ─────────────── -->
+<footer>
+  <div class="footer-logo">🌻 Children's Place Learning Center</div>
+  <p style="margin:.5rem 0;">Phoenix, Arizona &nbsp;|&nbsp; <a href="tel:+16025550199">(602) 555-0199</a> &nbsp;|&nbsp; <a href="mailto:hello@childrensplaceaz.com">hello@childrensplaceaz.com</a></p>
+  <p style="margin-top:1.5rem; font-size:.8rem; opacity:.6;">© 2025 Children's Place Learning Center. All rights reserved. &nbsp;|&nbsp; Daycare in Phoenix · Preschool in Phoenix · Childcare Services Phoenix AZ</p>
+</footer>
+
+</body>
+</html>
